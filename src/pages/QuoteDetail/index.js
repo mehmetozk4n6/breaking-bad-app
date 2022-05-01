@@ -1,12 +1,12 @@
 import { useEffect } from "react";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import { useSelector } from "react-redux";
 import { quotesSelector } from "../../redux/quotesSlice";
 
 function QuoteDetail() {
   const { quote_id } = useParams();
-  const location = useLocation();
+
   const navigate = useNavigate();
   const items = useSelector(quotesSelector);
 
@@ -16,7 +16,7 @@ function QuoteDetail() {
     if (!quote) {
       return navigate(-1);
     }
-  }, []);
+  }, [quote]);
 
   return (
     <div>
