@@ -16,7 +16,7 @@ function QuoteDetail() {
     if (!quote) {
       return navigate(-1);
     }
-  }, [quote]);
+  }, [quote, navigate]);
 
   return (
     <div>
